@@ -9,9 +9,7 @@ import sun.applet.Main;
 public class NasaapiApplication {
 
 	public static void main(String[] args) {
+        SpringApplication.run(NasaapiApplication.class, args);
 
-		SpringApplication.run(NasaapiApplication.class, args);
-		MainController mainController = new MainController();
-		mainController.run();
 	}
 }
