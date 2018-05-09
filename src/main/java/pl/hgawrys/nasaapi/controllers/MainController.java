@@ -31,12 +31,12 @@ public class MainController {
     }
 
     @PostMapping("/")
-    public String indexpost(@RequestParam("dataInput") String dataInput,
+    public String indexpost(@RequestParam("dataInput") java.sql.Date dataInput,
             Model model) {
         model.addAttribute("photoData", nasaService.getPictureOfTheDay());
-        model.addAttribute("dataNasa", nasaService.getAsteroids(dataInput));
+        model.addAttribute("dataNasa", nasaService.getAsteroids(dataInput.toString()));
         model.addAttribute("day", dataInput);
-        System.out.println(nasaService.getAsteroids(dataInput).toString());
+        System.out.println(nasaService.getAsteroids(dataInput.toString()).toString());
         return "index";
 
     }
